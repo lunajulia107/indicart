@@ -1,0 +1,55 @@
+@use "sass:map";
+
+// Fonts
+$font-integral-cf: 'Integral CF', sans-serif;
+$font-roundend: 'Rounded Elegance', sans-serif;
+$font-outfit: 'Outfit', sans-serif;
+
+// Colors  
+$colors: (
+  "dark-gray": #21262B,
+  "darker-gray10": rgba(33, 38, 43, 0.1),
+  "darker-gray25": rgba(33, 38, 43, 0.25),
+  "darker-gray5": rgba(33, 38, 43, 0.05),
+  "darker-gray50": rgba(33, 38, 43, 0.5),
+  "darker-gray75": rgba(33, 38, 43, 0.75),
+  "dark-navy": #1B1464,
+  "delicate-orchid": #6c2da3,
+  "iris-purple": #93278F,
+  "light-cyan": #94E6FF,
+  "light-gray": #F2F2F2,
+  "light-purple": #F7DEFF,
+  "lighter-gray": rgba(220, 220, 220, 0.2),
+  "lilac": rgba(255, 34, 255, 0.13),
+  "yellow": #f2c550
+);
+$color-primary: map.get($colors, "delicate-orchid");
+$color-secondary: map.get($colors, "iris-purple");
+$dark-gray: map.get($colors, "dark-gray");
+$white: white;
+ 
+// Gradient
+$gradient: var(--Gradient, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(90deg, #93278F 0%, #4F2894 101.5%));
+
+// Font Sizes (rem)
+$rem-sizes: (
+2: 0.125rem, 4: 0.25rem, 8: 0.5rem, 10: 0.625rem, 12: 0.75rem, 14: 0.875rem,
+15: 0.9375rem, 16: 1rem, 20: 1.25rem, 24: 1.5rem, 32: 2rem, 40: 2.5rem,
+48: 3rem, 56: 3.5rem, 64: 4rem, 72: 4.5rem, 80: 5rem, 88: 5.5rem, 96: 6rem
+);
+
+// Gaps
+$gap-0: 0;
+// 0px
+$gap-1: 0.25rem;
+// 4px
+$gap-2: 0.5rem;
+// 8px
+$gap-3: 1rem;
+// 16px
+$gap-4: 1.5rem;
+// 24px
+$gap-5: 3rem; 
+// 48px  
+$gap-6: 5rem;
+// 80 px

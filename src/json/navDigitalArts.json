@@ -1,0 +1,24 @@
+{
+    "navDigitalArts": [
+        {
+            "id": 0,
+            "description": "Todas as categorias"
+        },
+        {
+            "id": 1,
+            "description": "Personagens"
+        },
+        {
+            "id": 2,
+            "description": "Comics"
+        },
+        {
+            "id": 3,
+            "description": "FanArt"
+        },
+        {
+            "id": 4,
+            "description": "Concept"
+        }
+    ]
+}

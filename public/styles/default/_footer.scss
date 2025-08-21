@@ -1,0 +1,159 @@
+@use "sass:map";
+@use './_variables' as *; 
+
+footer {
+    .footer-informations1 {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between; 
+
+        padding-top: 5rem;
+        padding-bottom: 4.5rem;
+
+        @media(max-width: 786px) {
+            flex-direction: column;
+        }
+
+        a.indicart {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+             
+            text-decoration: none;
+    
+            p {
+                max-width: 17rem;
+     
+                font-size: map.get($rem-sizes, 16);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5rem;
+            }
+        } 
+
+        nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+            @media(max-width: 1200px) {
+                grid-template-columns: 1fr 1fr;
+            }
+    
+            @media(max-width: 786px) {
+                width: 100%;
+            }
+    
+            @media(max-width: 576px) {
+                grid-template-columns: 1fr;
+            }
+    
+            div {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+
+                width: 10rem;
+    
+                h3 {
+                    font-family: $font-outfit;
+                    font-size: map.get($rem-sizes, 16) !important;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.6875rem;
+                }
+    
+                ul {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    width: 10rem;
+    
+                    li {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        height: 1.375rem;
+                        padding: 0.125rem 0rem;
+    
+                        a {
+                            text-align: center;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+    
+                            font-family: $font-outfit;
+                            font-size: map.get($rem-sizes, 16);
+                            font-style: normal;
+                            font-weight: 300;
+                            line-height: 1.375rem; 
+    
+                            &:hover {
+                                font-weight: 400; 
+                                transform: scale(1.01);  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } 
+
+    .footer-informations2 {
+        padding: 1.5rem 0;
+        border-top: 1px solid;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            @media(max-width: 768px) {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .social-medias {
+                display: flex;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    @media(max-width: 768px) {
+                        align-items: start;
+                        flex-direction: column;
+                    }
+
+                    ul {
+                        display: flex;
+                        transition: all 0.3s ease;
+
+                        li a svg:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+
+            p {
+                display: flex;
+                flex-direction: column;
+                
+                font-size: map.get($rem-sizes, 16);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 137%;
+            }
+
+            span,
+            h3 {
+                font-family: $font-outfit;
+                font-size: map.get($rem-sizes, 14);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 137%;
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@use "sass:color";
+@use './_variables' as *; 
+
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+
+  .btn-#{$name} {
+    background-color: $color;
+    transition: all 0.3s ease;
+
+    &:disabled { 
+      cursor: default;
+      opacity: 0.7;
+    }
+
+    &:not(:disabled) {
+      &:focus {
+        background-color: color.adjust($color, $lightness: -20%); 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+        transform: scale(1.01);
+        outline: none;
+      }
+
+      &:hover {
+        background-color: color.adjust($color, $lightness: -25%); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transform: scale(1.01);
+      }
+    }
+  }
+
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.bg-gradient {
+  background: $gradient;
+}
+
+.btn-gradient {
+  background: $gradient;
+  transition: all 0.3s ease;
+
+  &:not(:disabled) {
+    &:focus { 
+      transform: scale(1.01); 
+      outline: none;
+    }
+
+    &:hover { 
+      transform: scale(1.01); 
+    }
+  }
+}
+
+.btn-border-primary {
+  background-color: $white;
+  border: 3px solid $color-secondary;
+  color: $color-secondary; 
+  transition: all 0.3s ease;
+
+  &:not(:disabled) {
+      &:focus {
+          background-color: $color-secondary !important;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          color: $white; 
+          transform: scale(1.01); 
+          outline: none;
+      }
+
+      &:hover { 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transform: scale(1.01); 
+      }
+  }
+}

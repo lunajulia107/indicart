@@ -1,0 +1,34 @@
+{
+    "appliedArtsDesign": [
+        {
+            "id": "1",
+            "artOne": "./images/home/SheHulk1.png",
+            "artTwo": "./images/home/SheHulk2.png",
+            "artThree": "./images/home/SheHulk3.png",
+            "artName": "She Hulk",
+            "artType": "Ilustração Visual",
+            "artActorPhoto": "./images/home/Dughgestu.png",
+            "artActorName": "by Dughgestu"
+        },
+        {
+            "id": "2",
+            "artOne": "./images/home/WhoCares1.png",
+            "artTwo": "./images/home/WhoCares2.png",
+            "artThree": "./images/home/WhoCares3.png",
+            "artName": "Who Cares?",
+            "artType": "Ilustração Albúm (capa)",
+            "artActorPhoto": "./images/home/Brunillarin.png",
+            "artActorName": "by Brunillarin"
+        },
+        {
+            "id": "3",
+            "artOne": "./images/home/GostoRoxo1.png",
+            "artTwo": "./images/home/GostoRoxo2.png",
+            "artThree": "./images/home/GostoRoxo3.png",
+            "artName": "Gosto roxo",
+            "artType": "Ilustração Visual",
+            "artActorPhoto": "./images/home/ViniciusMatos.png",
+            "artActorName": "by ViniciusMatos"
+        }
+    ]
+}

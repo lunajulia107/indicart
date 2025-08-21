@@ -1,0 +1,49 @@
+{
+    "digitalArts": [
+        {
+            "id": "0",
+            "artImg": "./images/home/azulPiscina.png",
+            "artImgActors": [
+                "./images/home/Brunillarin.png",
+                "./images/home/ViniciusMatos.png"
+            ],
+            "description": "Azul Piscina",
+            "avaliationNumber": "5",
+            "pagesNumbers": "de 1 a 5",
+            "location": "Barueri - SP"
+        },
+        {
+            "id": "1",
+            "artImg": "./images/home/artEscolar.png",
+            "artImgActors": [
+                "./images/home/ViniciusMatos.png"
+            ],
+            "description": "ArtEscolar",
+            "avaliationNumber": "5",
+            "pagesNumbers": "de 1 a 5",
+            "location": "Barueri - SP"
+        },
+        {
+            "id": "2",
+            "artImg": "./images/home/casinhaDoWook.png",
+            "artImgActors": [
+                "./images/home/ViniciusMatos.png"
+            ],
+            "description": "Casinha do Wook",
+            "avaliationNumber": "5",
+            "pagesNumbers": "de 1 a 3",
+            "location": "Barueri - SP"
+        },
+        {
+            "id": "3",
+            "artImg": "./images/home/niver.png",
+            "artImgActors": [
+                "./images/home/Dughgestu.png"
+            ],
+            "description": "Niver",
+            "avaliationNumber": "5",
+            "pagesNumbers": "de 1 a 5",
+            "location": "Barueri - SP"
+        }
+    ]
+} 

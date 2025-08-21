@@ -1,0 +1,123 @@
+@use "sass:map";
+@use '../default/_variables' as *;
+
+.section-applied-art-design {
+    padding-top: $gap-6;
+    padding-bottom: $gap-6;
+
+    .art-design-header {
+        @media(max-width: 800px) {
+           align-items: center;
+        }
+    }
+
+    .art-design-box .art-design {  
+        .box-images {
+            display: grid;
+            grid-template-areas:
+                "box-images-one box-images-two" "box-images-one box-images-two";
+            row-gap: 0;
+
+            &-one {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 315px;
+                height: 353px;
+                border-radius: 0.75rem;
+
+                @media(max-width: 1200px) {
+                    width: 262px;
+                }
+
+                @media(max-width: 1100px) {
+                    width: 252px;
+                }
+
+                @media(max-width: 992px) {
+                    width: 318px;
+                }
+
+                @media (max-width: 400px) {
+                    width: 300px;
+                }
+
+                @media (max-width: 300px) {
+                    width: 250px;
+                }
+            }
+
+            &-two {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @media(max-width: 992px) {
+                    display: none;
+                }
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 168.61px;
+                    width: 156px;
+                    border-radius: 0.75rem;
+                }
+            }
+        }
+
+        .about-art {
+            display: flex;
+            flex-direction: column;
+
+            &-title {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.375rem;
+
+                .art-name {
+                    font-size: map.get($rem-sizes, 16);
+                    font-style: normal;
+                    font-weight: 400;
+                }
+
+                .art-type {
+                    font-size: map.get($rem-sizes, 16);
+                    font-style: normal;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .box-actor {
+            display: flex;
+            align-items: center;
+
+            &-photo {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 2.5rem;
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            &-name {
+                font-size: map.get($rem-sizes, 14);
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1rem;
+            }
+        }
+
+        button {
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.6875rem;
+        }
+    }
+}

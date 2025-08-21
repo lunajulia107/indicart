@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "../default/_variables" as *;
+
+.section-who-we-are {
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    padding-top: $gap-6;
+    padding-bottom: $gap-6;
+
+    @media(max-width: 992px) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    &-image {
+        @media(max-width: 756px) {
+            width: 456px;
+        }
+
+        @media(max-width: 500px) {
+            width: 356px;
+        }
+
+        @media(max-width: 400px) {
+            width: 256px;
+        }
+    }
+
+    &-text {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+
+        p {
+            font-size: map.get($rem-sizes, 20);
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.75rem;
+        }
+    }
+}

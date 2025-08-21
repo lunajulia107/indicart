@@ -1,0 +1,37 @@
+@use './_variables' as *;
+
+html, body, div {
+    font-family: $font-outfit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-integral-cf;
+}
+
+.ff-integral-cf {
+    font-family: $font-integral-cf;
+}
+
+.ff-roundend {
+    font-family: $font-roundend;
+    $font-outfit: 'Outfit', sans-serif;
+}
+
+.ff-outfit {
+    font-family: $font-outfit;
+}
+
+@each $size, $value in $rem-sizes {
+    .fs-#{$size} {
+        font-size: $value !important;
+    }
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
+.word-break {
+    width: 90%;
+    word-break: break-word !important;
+} 

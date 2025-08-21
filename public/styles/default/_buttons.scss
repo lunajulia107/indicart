@@ -1,0 +1,34 @@
+@use './_variables' as *;
+
+.btn-format-one {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 9rem;
+    height: 3rem;
+    padding: 1rem;
+
+    border-radius: 1.875rem;
+    gap: 0.625rem;
+}
+
+.btn-format-two {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    width: 9rem;
+    height: 3rem;
+    padding: 1rem;
+
+    border-radius: 2.5rem;
+    background: none;
+    gap: 0.625rem;
+}
+
+.gap-6 {
+    gap: $gap-6;
+}
+
+

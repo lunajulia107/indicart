@@ -1,0 +1,130 @@
+@use "sass:map";
+@use "../default/_variables" as *;
+
+.section-digital-arts {
+    padding-top: $gap-6;
+    padding-bottom: $gap-6;
+
+    nav {
+        overflow-x: scroll;
+        scrollbar-width: none;
+        width: 100%;
+
+        ul {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    .arts-projects .art-project {
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+        height: 25.5775rem;
+        width: 20.625rem !important;
+        
+        border-radius: 0.82281rem;
+        box-shadow: 0px 2px 2px 0px rgba(167, 163, 255, 0.31);
+
+        @media(max-width: 400px) {
+            width: 15.625rem;
+        }
+
+        .art {
+            position: relative;
+            height: 14.43931rem;
+            width: 100%;
+            border-radius: 0.75rem;
+
+            .box-images .image img {
+                width: 100%;
+            }
+
+            .actors {
+                display: flex;
+                align-items: flex-end;
+                position: absolute;
+                bottom: -16px;
+                left: 16px;
+                height: inherit;
+
+                .actor-photo {
+                    height: 2.125rem;
+                    width: 2.125rem;
+                    border-radius: 2.125rem;
+                    border: 2.194px solid;
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+
+            p {
+                font-size: 1.23419rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.85131rem;
+            }
+
+            .avaliation {
+                font-size: 0.68569rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            .pages-numbers {
+                font-size: 0.82281rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.19663rem;
+                text-align: right;
+            }
+        }
+
+        hr {
+            margin: 0;
+            width: 100%;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.125rem 0rem;
+            height: 2.125rem;
+            width: 6.0625rem;
+
+            border: none;
+            border-radius: 1.875rem;
+
+            font-size: 0.9375rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.6875rem;
+        }
+
+        .location {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 2.0625rem;
+            width: 5.75rem;
+
+            font-size: 0.8225rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.6875rem;
+            text-align: right;
+        }
+    }
+}
