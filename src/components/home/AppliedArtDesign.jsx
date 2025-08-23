@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; 
 
 const AppliedArtDesign = ({ appliedArtsDesign }) => {
-  const sliderSettings = {
+  const sliderSettings = { 
     dots: true,
     infinite: true,
     speed: 700,
@@ -66,7 +66,7 @@ const AppliedArtDesign = ({ appliedArtsDesign }) => {
                     </span>
                   </div>
 
-                  <button className="btn-border-primary btn-format-two animate__animated animate__pulse animate__delay-4s" type="button">
+                  <button className="btn-border-primary btn-secondary-format animate__animated animate__pulse animate__delay-4s" type="button">
                     Conferir
                   </button>
                 </div>

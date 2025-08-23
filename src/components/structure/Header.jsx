@@ -1,6 +1,6 @@
-import React from "react";
- 
-const NavLinks = ({ gap }) => ( 
+import React, { useEffect, useState } from "react";
+
+const NavLinks = ({ gap }) => (
   <ul className={`d-flex ${gap} navbar-nav`}>
     <li>
       <a className="text-dark-gray text-decoration-none" href="#">
@@ -22,22 +22,42 @@ const NavLinks = ({ gap }) => (
 
 const AuthButtons = () => (
   <>
-    <button className="btn-border-primary btn-format-one me-2" type="button">
+    <button className="btn-border-primary btn-primary-format me-2" type="button">
       Login
     </button>
-    <button className="border-0 btn-format-one btn-gradient text-white" type="button">
+    <button className="border-0 btn-primary-format btn-gradient text-white" type="button">
       Cadastra-se
     </button>
   </>
 );
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const headerStyle = {
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    zIndex: 1030, 
+    boxShadow: scrolled ? "0 4px 6px rgba(0,0,0,0.1)" : "none",
+    transition: "all 0.3s ease",
+  };
+
   const logoUrl = "./images/structure/Logo.png";
   const searchIconUrl = "./images/structure/search.svg";
   const menuIconUrl = "./images/structure/bar.svg";
 
   return (
-    <header className="border-bottom navbar navbar-expand-xxl">
+    <header style={headerStyle} className="bg-white border-bottom navbar navbar-expand-xxl">
       <div className="align-items-center container d-flex gap-3 gap-sm-5 justify-content-between">
         <div className="container-logo">
           <img src={logoUrl} alt="Logo Indicart" />
@@ -52,6 +72,7 @@ const Header = () => {
             className="border-2 border-darker-gray10 form-control search-input text-darker-gray50 w-100"
             type="text"
             placeholder="Pesquisa"
+            aria-label="Pesquisar"
           />
           <img className="search-icon" src={searchIconUrl} alt="Ícone de pesquisa" />
         </div>

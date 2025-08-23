@@ -5,14 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"; 
 
 const DigitalArts = ({ digitalArts }) => {
-  const sliderSettings = {
+  const sliderSettings = { 
     dots: true,
     infinite: true,
     speed: 400,
     slidesToShow: 3, 
     slidesToScroll: 1,
     autoplay: true, 
-    autoplaySpeed: 3500,    
+    autoplaySpeed: 3500,   
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1200,
@@ -38,13 +39,10 @@ const DigitalArts = ({ digitalArts }) => {
       <Slider {...sliderSettings}>
         {digitalArts.map((digitalArt, index) => (
           <div key={digitalArt.id} className="d-flex justify-content-center justify-content-lg-start">
-            <div className="art-project bg-white border border-darker-gray10 gap-3 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+            <div className="art-project bg-white border border-darker-gray10 mb-4 overflow-hidden animate__animated animate__fadeInUp animate__delay-1s">
               {/* Imagem principal da arte com animação */}
-              <div className="art bg-lilac">
-                <div className="box-images animate__animated animate__fadeInLeft animate__delay-2s">
-                  <div className="image">
-                    <img src={digitalArt.artImg} alt={digitalArt.description} />
-                  </div>
+              <div className="bg-lilac container-image animate__animated animate__fadeInLeft animate__delay-2s">
+                  <img src={digitalArt.artImg} alt={digitalArt.description} />
                 </div>
 
                 {/* Imagens dos autores/atores com animação */}
@@ -59,10 +57,9 @@ const DigitalArts = ({ digitalArts }) => {
                     </div>
                   ))}
                 </div>
-              </div>
 
               {/* Descrição e detalhes da arte com animação */}
-              <div className="d-flex flex-column gap-3 p-3 w-100 animate__animated animate__fadeInUp animate__delay-4s">
+              <div className="d-flex flex-column gap-3 mt-3 p-3 w-100 animate__animated animate__fadeInUp animate__delay-4s">
                 <div className="ff-outfit description">
                   <div>
                     <p className="description-title">{digitalArt.description}</p>
@@ -82,7 +79,7 @@ const DigitalArts = ({ digitalArts }) => {
                 <hr className="border-darker-gray10" />
 
                 <div className="d-flex justify-content-between w-100">
-                  <button className="btn-lighter-gray text-iris-purple animate__animated animate__pulse animate__delay-5s" type="button">
+                  <button className="btn-border-primary animate__animated animate__pulse animate__delay-5s" type="button">
                     Mais
                   </button>
 

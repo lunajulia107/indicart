@@ -68,9 +68,17 @@
         font-style: normal;
         font-weight: 400;
         line-height: 1.6875rem;
+        transition: all 0.5s ease;
 
-        &:hover {  
-            transform: scale(2.0); 
+        &:not(:disabled) {
+            &:focus { 
+                transform: scale(1.1) !important ; 
+                outline: none;
+            }
+
+            &:hover { 
+                transform: scale(1.1) !important; 
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ const DigitalArtsNav = ({ navDigitalArts }) => {
   return (
     <ul className="gap-3">
       {navDigitalArts.map((item) => {
-        const buttonClass = `border-0 btn-format-one ${item.id === 0 ? "btn-iris-purple text-white" : ""
+        const buttonClass = `border-0 btn-primary-format ${item.id === 0 ? "btn-iris-purple text-white" : ""
           } animate__animated animate__fadeInUp animate__delay-1s`;  
 
         return (

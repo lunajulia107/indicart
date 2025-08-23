@@ -46,7 +46,8 @@ const Footer = () => {
             <FooterLinkList
               navTitle="Encontre-nos"
               links={FooterLinks.column5Links}
-            />
+              newTab={true} // aqui é que abre em nova aba
+            /> 
           </nav>
         </div>
       </div>

@@ -20,44 +20,45 @@
         display: flex !important;
         align-items: center;
         flex-direction: column;
-        padding: 1rem;
-        height: 25.5775rem;
+        padding: 1rem; 
         width: 20.625rem !important;
         
         border-radius: 0.82281rem;
         box-shadow: 0px 2px 2px 0px rgba(167, 163, 255, 0.31);
 
-        @media(max-width: 400px) {
-            width: 15.625rem;
+        @media(max-width: 1199px) {
+            width: 90% !important; 
         }
 
-        .art {
-            position: relative;
+        @media(max-width: 991px) {
+            height: 100%; 
+        }
+
+        .container-image {
             height: 14.43931rem;
-            width: 100%;
+            width: 100%; 
             border-radius: 0.75rem;
 
-            .box-images .image img {
-                width: 100%;
+            img {
+                height: 100%;
+                width: 100%; 
             }
+        } 
 
-            .actors {
-                display: flex;
-                align-items: flex-end;
-                position: absolute;
-                bottom: -16px;
-                left: 16px;
-                height: inherit;
+        .actors {
+            margin: -24px 0 0 32px;
+            width: 100%;
 
-                .actor-photo {
-                    height: 2.125rem;
-                    width: 2.125rem;
-                    border-radius: 2.125rem;
-                    border: 2.194px solid;
+            .actor-photo { 
+                position: relative;
+                height: 2.125rem;
+                width: 2.125rem;
+                border-radius: 2.125rem;
+                border: 2.194px solid;
+                z-index: 3;
 
-                    img {
-                        border-radius: 50%;
-                    }
+                img {
+                    border-radius: 50%;
                 }
             }
         }
@@ -103,9 +104,8 @@
             padding: 0.125rem 0rem;
             height: 2.125rem;
             width: 6.0625rem;
-
-            border: none;
-            border-radius: 1.875rem;
+            
+            border-radius: 1.875rem; 
 
             font-size: 0.9375rem;
             font-style: normal;

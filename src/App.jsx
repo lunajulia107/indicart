@@ -68,7 +68,7 @@ function App() {
                 arte!
               </p>
             </div>
-            <button className="animate__animated animate__pulse animate__delay-3s border-0 btn-format-one btn-gradient text-white" type="button">
+            <button className="animate__animated animate__pulse animate__delay-3s border-0 btn-primary-format btn-gradient text-white" type="button">
               Junte-se a nós
             </button>
           </div>
@@ -109,7 +109,7 @@ function App() {
             </div>
 
             <button
-              className="border-0 btn-format-one btn-delicate-orchid text-white pe-5 ps-5"
+              className="border-0 btn-primary-format btn-gradient text-white pe-5 ps-5"
               type="button"
               style={{ width: "initial" }}
             >

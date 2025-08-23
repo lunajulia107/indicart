@@ -1,7 +1,6 @@
 @use "sass:color";
 @use './_variables' as *; 
 
-
 @each $name, $color in $colors {
   .bg-#{$name} {
     background-color: $color;

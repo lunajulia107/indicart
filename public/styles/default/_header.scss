@@ -34,12 +34,13 @@ header.navbar {
 
     .container-search {
         position: relative;
-
+         
         .search-input {
             display: flex;
             align-items: center;
             flex-shrink: 0;
             gap: 10.875rem;
+            cursor: pointer;
 
             border: 2px solid;
             border-radius: 3.25rem;

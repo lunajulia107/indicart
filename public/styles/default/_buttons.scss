@@ -1,6 +1,8 @@
+@use "sass:map";
+@use "sass:color";
 @use './_variables' as *;
 
-.btn-format-one {
+.btn-primary-format {
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -13,7 +15,7 @@
     gap: 0.625rem;
 }
 
-.btn-format-two {
+.btn-secondary-format {
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -30,5 +32,29 @@
 .gap-6 {
     gap: $gap-6;
 }
+
+.slick-prev,
+.slick-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  color: map.get($colors, "white") !important;       
+
+  &:before {
+    content: '';  
+  }
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
 
 
