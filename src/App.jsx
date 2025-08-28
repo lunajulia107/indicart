@@ -12,6 +12,8 @@ import navDigitalArtsJson from "./json/navDigitalArts";
 import digitalArtsJson from "./json/digitalArts";
 import appliedArtsDesignJson from "./json/appliedArtsDesign";
 
+import ModalRegistrationOrLogin from "./components/structure/ModalRegistrationOrLogin"; 
+
 function App() {
   return (
     <> 

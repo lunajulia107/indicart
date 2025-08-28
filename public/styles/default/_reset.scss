@@ -93,3 +93,27 @@ li {
     list-style: none;
 }
 
+.input-modal {
+    border-left: 0 !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important; 
+    padding: 12px 4px !important;
+    font-size: 0.875rem !important;
+}
+
+#modalRegistrationOrLogin {
+    .modal-dialog {
+        @media (max-width: 991px) {
+            margin: 0;
+        }
+    }
+
+    .modal-content {
+        @media (max-width: 991px) {
+            border-radius: 0 !important;
+            padding: 0 !important;
+            height: 100vh;
+        }
+    }
+}

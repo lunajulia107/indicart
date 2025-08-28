@@ -93,6 +93,28 @@ li {
   list-style: none;
 }
 
+.input-modal {
+  border-left: 0 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  padding: 12px 4px !important;
+  font-size: 0.875rem !important;
+}
+
+@media (max-width: 991px) {
+  #modalRegistrationOrLogin .modal-dialog {
+    margin: 0;
+  }
+}
+@media (max-width: 991px) {
+  #modalRegistrationOrLogin .modal-content {
+    border-radius: 0 !important;
+    padding: 0 !important;
+    height: 100vh;
+  }
+}
+
 .bg-dark-gray {
   background-color: #21262B;
 }

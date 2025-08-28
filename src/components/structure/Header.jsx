@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ModalRegistrationOrLogin from "./ModalRegistrationOrLogin";
 
 const NavLinks = ({ gap }) => (
   <ul className={`d-flex ${gap} navbar-nav`}>
@@ -20,34 +21,34 @@ const NavLinks = ({ gap }) => (
   </ul>
 );
 
-const AuthButtons = () => (
-  <>
-    <button className="btn-border-primary btn-primary-format me-2" type="button">
-      Login
-    </button>
-    <button className="border-0 btn-primary-format btn-gradient text-white" type="button">
-      Cadastra-se
-    </button>
-  </>
-);
-
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [modalType, setModalType] = useState("login"); // login ou register
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const openLoginModal = () => {
+    setModalType("login");
+    setIsModalOpen(true);
+  };
+
+  const openRegisterModal = () => {
+    setModalType("register");
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => setIsModalOpen(false);
 
   const headerStyle = {
     position: "fixed",
     top: 0,
     width: "100%",
-    zIndex: 1030, 
+    zIndex: 1030,
     boxShadow: scrolled ? "0 4px 6px rgba(0,0,0,0.1)" : "none",
     transition: "all 0.3s ease",
   };
@@ -56,60 +57,88 @@ const Header = () => {
   const searchIconUrl = "./images/structure/search.svg";
   const menuIconUrl = "./images/structure/bar.svg";
 
+  const AuthButtons = () => (
+    <>
+      <button
+        className="btn-border-primary btn-primary-format me-2"
+        onClick={openLoginModal}
+      >
+        Login
+      </button>
+      <button
+        className="border-0 btn-primary-format btn-gradient text-white"
+        onClick={openRegisterModal}
+      >
+        Cadastra-se
+      </button>
+    </>
+  );
+
   return (
-    <header style={headerStyle} className="bg-white border-bottom navbar navbar-expand-xxl">
-      <div className="align-items-center container d-flex gap-3 gap-sm-5 justify-content-between">
-        <div className="container-logo">
-          <img src={logoUrl} alt="Logo Indicart" />
-        </div>
+    <>
+      <header style={headerStyle} className="bg-white border-bottom navbar navbar-expand-xxl">
+        <div className="align-items-center container d-flex gap-3 gap-sm-5 justify-content-between">
+          <div className="container-logo">
+            <img src={logoUrl} alt="Logo Indicart" />
+          </div>
 
-        <nav className="d-none d-xxl-flex">
-          <NavLinks gap="gap-5" />
-        </nav>
-
-        <div className="container-search">
-          <input
-            className="border-2 border-darker-gray10 form-control search-input text-darker-gray50 w-100"
-            type="text"
-            placeholder="Pesquisa"
-            aria-label="Pesquisar"
-          />
-          <img className="search-icon" src={searchIconUrl} alt="Ícone de pesquisa" />
-        </div>
-
-        <div className="d-none d-xl-flex">
-          <AuthButtons />
-        </div>
-
-        <div className="container-mobile flex-row gap-3 relative">
-          <button className="border-0 btn-search navbar-toggle" type="button" aria-label="Pesquisar">
-            <img src={searchIconUrl} alt="Ícone de pesquisa" />
-          </button>
-
-          <button
-            className="border-2 border-darker-gray10 navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <img src={menuIconUrl} alt="Ícone de menu" />
-          </button>
-        </div>
-
-        <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
-          <nav className="d-flex d-xxl-none">
-            <NavLinks gap="gap-3" />
+          <nav className="d-none d-xxl-flex">
+            <NavLinks gap="gap-5" />
           </nav>
 
-          <div className="d-flex d-xl-none mt-4">
+          <div className="container-search">
+            <input
+              className="border-2 border-darker-gray10 form-control search-input text-darker-gray50 w-100"
+              type="text"
+              placeholder="Pesquisa"
+              aria-label="Pesquisar"
+            />
+            <img className="search-icon" src={searchIconUrl} alt="Ícone de pesquisa" />
+          </div>
+
+          <div className="d-none d-xl-flex">
             <AuthButtons />
           </div>
+
+          <div className="container-mobile flex-row gap-3 relative">
+            <button className="border-0 btn-search navbar-toggle" type="button" aria-label="Pesquisar">
+              <img src={searchIconUrl} alt="Ícone de pesquisa" />
+            </button>
+
+            <button
+              className="border-2 border-darker-gray10 navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <img src={menuIconUrl} alt="Ícone de menu" />
+            </button>
+          </div>
+
+          <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <nav className="d-flex d-xxl-none">
+              <NavLinks gap="gap-3" />
+            </nav>
+
+            <div className="d-flex d-xl-none mt-4">
+              <AuthButtons />
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Modal integrado */}
+      {isModalOpen && (
+        <ModalRegistrationOrLogin
+          type={modalType}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
+      )}
+    </>
   );
 };
 
