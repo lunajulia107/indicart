@@ -82,21 +82,64 @@ const ModalRegistrationOrLogin = ({ isOpen, onClose, type = "login" }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = () => {
-    if (validateLogin()) {
-      alert("Login realizado! 🚀");
-      onClose();
-    }
+  const handleLogin = async () => {
+    if (!validateLogin()) return;
+
+    try {
+      const res = await fetch('http://localhost/seu-projeto/api/user.php?action=login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cpf: formData.emailCpf, // assumindo que é CPF
+            senha: formData.password,
+          }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          alert('Login realizado com sucesso! 🎉');
+          onClose();
+          // aqui você pode salvar dados do usuário no state global ou localStorage
+        } else {
+          alert(data.message || 'Erro ao fazer login');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Erro de conexão com a API');
+      }
   };
 
-  const handleCadastro = () => {
-    if (step === 1 && validateCadastroStep1()) setStep(2);
-    else if (step === 2 && validateCadastroStep2()) {
-      alert("Cadastro concluído! 🎉");
-      onClose();
+  const handleCadastro = async () => {
+    if (step === 1 && validateCadastroStep1()) {
+      setStep(2);
+      return;
+    } else if (step === 2 && validateCadastroStep2()) {
+      try {
+        const res = await fetch('http://localhost/seu-projeto/api/user.php?action=register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nome: formData.nome,
+            cpf: formData.cpf,
+            data_nascimento: formData.nascimento,
+            senha: formData.senhaCadastro,
+          }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          alert('Cadastro realizado com sucesso! 🎉');
+          onClose();
+        } else {
+          alert(data.message || 'Erro ao cadastrar usuário');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Erro de conexão com a API');
+      }
     }
   };
-
+ 
   const renderInput = (name, type, placeholder) => (
     <div>
       <input
