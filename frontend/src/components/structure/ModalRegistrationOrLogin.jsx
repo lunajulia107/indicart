@@ -86,7 +86,7 @@ const ModalRegistrationOrLogin = ({ isOpen, onClose, type = "login" }) => {
     if (!validateLogin()) return;
 
     try {
-      const res = await fetch('http://localhost/seu-projeto/api/user.php?action=login', {
+      const res = await fetch('http://localhost/indicart/api/user.php?action=login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -115,7 +115,7 @@ const ModalRegistrationOrLogin = ({ isOpen, onClose, type = "login" }) => {
       return;
     } else if (step === 2 && validateCadastroStep2()) {
       try {
-        const res = await fetch('http://localhost/seu-projeto/api/user.php?action=register', {
+        const res = await fetch('http://localhost/indicart/api/user.php?action=register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
