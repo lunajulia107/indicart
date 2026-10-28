@@ -1,4 +1,4 @@
-# 🎨 Indicart
+# 🎨 indicart
 
 **Site oficial da Indicart**, uma empresa responsável por conectar artistas e amantes de arte. Uma landing page criada para apresentar conteúdo artístico de forma interativa e visualmente agradável, onde é possível **explorar, vender e adquirir obras de arte digital**.
 
