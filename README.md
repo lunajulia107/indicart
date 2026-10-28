@@ -26,6 +26,15 @@
 
 ---
 
+## 📸 Demonstração
+
+<!-- Quando o GIF estiver pronto, salve em frontend/public/images/demo.gif e descomente a linha abaixo -->
+<!-- <img src="./frontend/public/images/demo.gif" alt="Demonstração das funcionalidades da Indicart" width="100%"> -->
+
+🎬 GIF com todas as funcionalidades em breve.
+
+---
+
 ## 📌 Sobre o projeto
 
 O projeto é uma **landing page** desenvolvida na faculdade, utilizando **React** e **Vite** como bundler. O conteúdo da página vem de **dados estáticos em JSON**, para fins estudantis.
